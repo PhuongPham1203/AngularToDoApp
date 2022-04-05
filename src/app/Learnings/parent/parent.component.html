@@ -1,19 +1,43 @@
-<div class="bg-info text-center">
-	<div class="form">
-		<h1>Message Parent to Child Using Input Output</h1>
-		<input type="text" [(ngModel)]="this.messageToChild">
-	</div>
-	<div class="form">
-		<h1>Message From Child Using Input Output</h1>
-		<label>{{this.messageFromChild}}</label>
-	</div>
-	<div class="form">
-		<h1>Message From Child Using ViewChild</h1>
-		<button class="btn btn-light" (click)="this.getMess()">Get Mess</button>
-		<label>{{this.messageFromChildViewChild}}</label>
+<div class="container bg-info">
+	<br>
+	<div class="row">
+		<div class="col-6">
+			<div class=" text-center ">
 
-	</div>
-	
+				<div class="form">
+					<h1>Message Parent to Child Using Input Output</h1>
+					<input type="text" [(ngModel)]="this.messageToChild">
+				</div>
+				<hr>
 
-	<app-child [messageFromParent]="messageToChild" (messageEvent)="this.receiveMessage($event)"></app-child>
+				<div class="form">
+					<h1>Message From Child Using Input Output</h1>
+					<label>{{this.messageFromChild}}</label>
+				</div>
+				<hr>
+
+				<div class="form">
+					<h1>Message From Child Using ViewChild</h1>
+					<button class="btn btn-light" (click)="this.getMess()">Get Mess</button>
+					<label>{{this.messageFromChildViewChild}}</label>
+			
+				</div>
+				<hr>
+
+				<div class="form">
+					<h1>Message From Parent Send to Child Using Data Service</h1>
+					<input type="text" [(ngModel)]="this.messInput">
+					<button class="btn btn-light" (click)="this.changeMessage()">Send Mess</button>
+					<label>{{this.messageFromDataService}}</label>
+			
+				</div>
+				<hr>
+				
+			
+			</div>
+		</div>
+		<div class="col-6">
+			<app-child [messageFromParent]="messageToChild" (messageEvent)="this.receiveMessage($event)"></app-child>
+		</div>
+	</div>
 </div>

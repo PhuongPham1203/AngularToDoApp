@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 import { ChildComponent } from '../child/child.component';
 @Component({
 	selector: 'app-parent',
@@ -15,9 +16,15 @@ export class ParentComponent implements OnInit {
 	// using viewchild
 	@ViewChild(ChildComponent) child:any;
 	public messageFromChildViewChild = "";
-	constructor() { }
+
+	// using Data Service
+	public messInput = "";
+	public messageFromDataService = "";
+
+	constructor(private data : DataService) { }
 
 	ngOnInit(): void {
+		this.data.currentMessage.subscribe(ms => this.messageFromDataService=ms);
 	}
 
 	getMess(){
@@ -26,5 +33,9 @@ export class ParentComponent implements OnInit {
 
 	receiveMessage($event: any){
 		this.messageFromChild = $event;
+	}
+
+	changeMessage(){
+		this.data.changeMessage(this.messInput);
 	}
 }

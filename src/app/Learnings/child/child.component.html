@@ -1,17 +1,49 @@
-<div class="bg-success">
-	<h3>Message from parent to Child Using Input Output</h3>
-	<p>Say {{messageFromParent}}</p>
+<div class="bg-success text-center">
+	<div class=" form ">
+		<h3>Message from parent to Child Using Input Output</h3>
+		<p>Say {{messageFromParent}}</p>
+		<br>
+		<br>
+	</div>
+	<hr>
 
-	<h3>Input Message to Parent Using Input Output</h3>
-	<input type="text" [(ngModel)]="this.messageToParent">
 
-	<button class="btn btn-light" (click)="this.sendMessage()">Click to send Parent Message</button>
-</div>
+	<div class="form" >
+		<h3>Input Message to Parent Using Input Output</h3>
+		<input type="text" [(ngModel)]="this.messageToParent">
 
-<div class="bg-secondary">
+		<button class="btn btn-light" (click)="this.sendMessage()">Click to send Parent Message</button>
+		<br>
+		<br>
+		<br>
+	</div>
+	<hr>
 
-	<h3>Input Message to Parent Using ViewChild</h3>
-	<input type="text" [(ngModel)]="this.messageToParentViewChild">
+	<div class="form">
 
-	
+		<h3>Input Message to Parent Using ViewChild</h3>
+		<input type="text" [(ngModel)]="this.messageToParentViewChild">
+		<br>
+		<br>
+		<br>
+		<br>
+
+	</div>
+	<hr>
+
+	<div class="form">
+
+		<h3>Input Message to Parent Using Data Service</h3>
+		<input type="text" [(ngModel)]="this.messInput">
+		<button class="btn btn-light" (click)="this.changeMessage()">Send Mess</button>
+		<label>{{this.messageDataService}}</label>
+		
+		<br>
+		<br>
+		<br>
+		<br>
+
+	</div>
+	<hr>
+
 </div>
