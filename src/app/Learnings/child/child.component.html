@@ -1,0 +1,9 @@
+<div class="bg-success">
+	<h3>Message from parent to Child</h3>
+	<p>Say {{messageFromParent}}</p>
+	
+	<h3>Input Message to Parent</h3>
+	<input  type="text" [(ngModel)]="this.messageToParent">
+	
+	<button class="btn btn-light" (click)="this.sendMessage()">Click to send Parent Message</button>
+</div>

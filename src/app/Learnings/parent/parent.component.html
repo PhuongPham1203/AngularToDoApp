@@ -1,0 +1,12 @@
+<div class="bg-info text-center">
+	<div class="form">
+		<h1>Message Parent to Child</h1>
+		<input type="text" [(ngModel)]="this.messageToChild">
+	</div>
+	<div class="form">
+		<h1>Message From Child</h1>
+		<label>{{this.messageFromChild}}</label>
+	</div>
+
+	<app-child [messageFromParent]="messageToChild" (messageEvent)="this.receiveMessage($event)"></app-child>
+</div>

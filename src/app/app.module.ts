@@ -12,6 +12,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ChildComponent } from './Learnings/child/child.component';
+import { ParentComponent } from './Learnings/parent/parent.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 		TodoItemComponent,
 		TodoInputComponent,
 		HeaderComponent,
-		FooterComponent
+		FooterComponent,
+  ChildComponent,
+  ParentComponent
 	],
 	imports: [
 		BrowserModule,
