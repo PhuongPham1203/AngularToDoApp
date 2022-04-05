@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { ChildComponent } from '../child/child.component';
 @Component({
 	selector: 'app-parent',
 	templateUrl: './parent.component.html',
@@ -7,12 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
 
-	messageToChild = "Hello world";
+	// using output and input
+	public messageToChild = "Hello world";
+	
 	public messageFromChild = "";
 
+	// using viewchild
+	@ViewChild(ChildComponent) child:any;
+	public messageFromChildViewChild = "";
 	constructor() { }
 
 	ngOnInit(): void {
+	}
+
+	getMess(){
+		this.messageFromChildViewChild = this.child.messageToParentViewChild;
 	}
 
 	receiveMessage($event: any){
