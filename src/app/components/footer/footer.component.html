@@ -1,0 +1,18 @@
+<div class="footer  w-100">
+	<div class="h-100 d-flex justify-content-around align-items-center custon-style-footer ">
+
+		<span class="items-count ">
+			{{this.length}} item{{this.length>1 ? 's' : ''}}
+		</span>
+		<div>
+			<ng-container *ngFor="let btn of this.filterButtons" >
+				<button type="button" class="btn-outline-warning btn" [ngClass]="{active:btn.isActive}">
+					{{btn.label}}
+				</button> &nbsp;
+			</ng-container>
+			
+		</div>
+
+		<button class="btn btn-outline-warning">Clear Completed</button>
+	</div>
+</div>

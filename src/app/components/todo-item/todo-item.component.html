@@ -1,0 +1,26 @@
+<div class="todo-item">
+<form [formGroup]="this.formTodoGroup" class="input-group">
+	<div class="btn-group " role="group">
+		<label class="btn-outline-success rounded-circle" ngbButtonLabel>
+			<input type="checkbox" class="btn-check" formControlName="check" ngbButton>
+			<i class="fa-solid fa-check"></i>
+		</label>
+	</div>
+	&nbsp; &nbsp;
+	<input [ngStyle]="{'display':this.editInput ? 'block' : 'none'}" (focusout)="this.OnFocus(false)"
+		class="form-control" type="text" formControlName="text" maxlength="50" >
+
+	<label *ngIf="!this.editInput" class="d-flex align-items-center">{{this.formTodoGroup.value.text}}</label>
+
+	<div *ngIf="!this.editInput" class="form-control text-end boder-transparent">
+		<span class="text-info" (click)="this.OnFocus(true)">
+			<i class="fa-solid fa-pen-to-square"></i>
+		</span>
+		&nbsp;
+		<span class="text-danger">
+			<i class="fa-solid fa-x"></i>
+		</span>
+	</div>
+</form>
+
+</div>
