@@ -14,7 +14,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ChildComponent } from './Learnings/child/child.component';
 import { ParentComponent } from './Learnings/parent/parent.component';
-
+import { ToDoAppComponent } from './to-do-app/to-do-app.component';
+import { ItemComponent } from './ToDoAppLayouts/item/item.component';
+import { ToDoDetailComponent } from './to-do-detail/to-do-detail.component';
+import { ContentProjectionComponent } from './content-projection/content-projection.component';
+import { ContentInComponentComponent } from './contents/content-in-component/content-in-component.component';
+import { ColumnJobComponent } from './ToDoAppLayouts/column-job/column-job.component';
+import { ButtonsInTaskComponent } from './ToDoAppLayouts/buttons-in-task/buttons-in-task.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AddJobModalComponent } from './ToDoAppLayouts/add-job-modal/add-job-modal.component';
+import { AddTaskModalComponent } from './ToDoAppLayouts/add-task-modal/add-task-modal.component';
 
 @NgModule({
 	declarations: [
@@ -24,15 +33,25 @@ import { ParentComponent } from './Learnings/parent/parent.component';
 		TodoInputComponent,
 		HeaderComponent,
 		FooterComponent,
-  ChildComponent,
-  ParentComponent
+		ChildComponent,
+		ParentComponent,
+		ToDoAppComponent,
+		ItemComponent,
+		ToDoDetailComponent,
+		ContentProjectionComponent,
+		ContentInComponentComponent,
+		ColumnJobComponent,
+		ButtonsInTaskComponent,
+  AddJobModalComponent,
+  AddTaskModalComponent,
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
 		FormsModule,
 		NgbModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
+		HttpClientModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

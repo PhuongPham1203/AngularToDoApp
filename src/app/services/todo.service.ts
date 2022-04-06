@@ -39,17 +39,7 @@ export class TodoService {
 
 		this.currentFilter = filter;
 
-		switch (filter) {
-			case Filter.Active:
-				this.filteredTodos = this.todos.filter(todo => !todo.isCompleted);
-				break;
-			case Filter.Completed:
-				this.filteredTodos = this.todos.filter(todo => todo.isCompleted);
-				break;
-			case Filter.All:
-				this.filteredTodos = [...this.todos.map(todo => ({ ...todo }))]; // cloneDeep
-				break;
-		}
+		
 
 		if (isFiltering) {
 			this.updateTodosData()

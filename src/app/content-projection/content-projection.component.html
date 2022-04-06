@@ -1,0 +1,43 @@
+<div class="container-fluid text-center border border-5">
+	<h1 class="text-primary">content-projection works! (parent)</h1>
+
+
+	<app-content-in-component>
+		<div class="bg-info mb-3">
+			<h1>Single slot</h1>
+			this is content form content-projection component
+		</div>
+
+		<div class="bg-success" role>
+			<h1>Multiple slot</h1>
+			<p>
+				this is selected content for role
+			</p>
+		</div>
+
+		<div class="bg-success" roleadmin>
+			<h1>Multiple slot</h1>
+			<p>
+				this is selected content for roleadmin
+			</p>
+		</div>
+
+		<div class="bg-success" rolelowlevel>
+			<h1>Multiple slot</h1>
+			<p>
+				this is selected content for rolelowlevel
+			</p>
+		</div>
+
+		<ng-template #admin>
+			<div class="bg-warning mb-3">
+				<h1>Conditional slot</h1>
+
+				this is for admin content
+			</div>
+
+		</ng-template>
+
+	</app-content-in-component>
+
+</div>

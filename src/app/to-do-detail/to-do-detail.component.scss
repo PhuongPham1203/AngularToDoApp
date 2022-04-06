@@ -1,0 +1,13 @@
+
+
+.task-todo{
+	height: 25px;
+}
+
+.show-on .show-on-mouse{
+	display: none;
+}
+
+.show-on:hover .show-on-mouse{
+	display: block;
+}

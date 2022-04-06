@@ -1,0 +1,22 @@
+<div class="container border border-4 mb-3">
+	<h2 class="text-danger">This is Content (Child)</h2>
+
+
+
+	<ng-content select="[role]"></ng-content>
+
+	<ng-content select="[roleadmin]"></ng-content>
+
+	<ng-content select="[role]"></ng-content>
+
+
+	<ng-content></ng-content>
+
+	<ng-content select="[rolelowlevel]"></ng-content>
+
+
+	<div *ngIf="adminTemplate">
+		<template [ngTemplateOutlet]="adminTemplate"></template>
+	</div>
+
+</div>

@@ -1,7 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<div class="container">
+		<a class="navbar-brand" [routerLink]="['/']">Home</a>
 
-<app-parent></app-parent>
+		<div class="collapse navbar-collapse">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item">
+					<a class="nar-link active" [routerLink]="['/todoapp']">TodoApp Page</a>
+				</li>
+				&nbsp;
+				&nbsp;
+				<li class="nav-item">
+					<a class="nar-link active" [routerLink]="['/sendmessager']">Message Page</a>
+				</li>
+				&nbsp;
+				&nbsp;
+				<li class="nav-item">
+					<a class="nar-link active" [routerLink]="['/content']">Content Projection Page</a>
+				</li>
+			</ul>
 
+		</div>
+	</div>
+</nav>
 
+<router-outlet></router-outlet>
 <!--
 <div class="wrapper d-flex flex-column align-items-center ">
 	<h1 class="title">todos</h1>
@@ -19,4 +41,17 @@
 		Copyright TodoApp
 	</small>
 </div> 
+-->
+
+<!--
+<div>
+	<div class="card">
+	<div class="header">
+		<ng-content select=".card-header"></ng-content>
+	</div>
+	<div class="body">
+		<ng-content select=".card-body"></ng-content>
+	</div>
+	
+</div>
 -->

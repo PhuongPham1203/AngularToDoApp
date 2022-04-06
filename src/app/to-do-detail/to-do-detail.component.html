@@ -1,0 +1,163 @@
+<div class="container-fluid">
+	<span *ngIf="this.dataDetail"></span>
+	<h1 class="text-info">{{this.dataDetail.name}}: <span class="text-primary">Detail</span></h1>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-3 border ">
+				<br>
+				<app-column-job>
+					<div header-column-job>
+						<h5 class="text-center">To do list</h5>
+					</div>
+
+					<ul body-column-job>
+						<ng-container *ngFor="let todo of this.dataTodoList">
+
+							<ng-container *ngIf="todo.status == 'ToDo'">
+								<li>
+									<label class="d-flex justify-content-between align-items-center show-on">
+										<span class="text-dark overflow-hidden task-todo">
+											{{todo.name}}
+										</span>
+										<span class="show-on-mouse">
+											<button [hidden]='true'>
+											</button>
+											<button class="btn btn-outline-danger" (click)="this.DeleteTask(todo.id)">
+												<i class="fa-regular fa-trash-can"></i>
+											</button>
+											&nbsp;
+											<button class="btn btn-outline-info" (click)="this.ChangeStatusTo(todo.id,'InProgress')">
+												<i class="fa-solid fa-arrow-right" ngAutoFocus></i>
+											</button>
+										</span>
+									</label>
+									<hr>
+								</li>
+							</ng-container>
+						</ng-container>
+					</ul>
+
+					<div footer-column-job>
+						<button class="btn btn-outline-secondary text-center w-100 mb-3" (click)="this.AddTask()">Add Task</button>
+					</div>
+				</app-column-job>
+			</div>
+			<div class="col-3 border">
+				<br>
+				<app-column-job>
+					<div header-column-job>
+						<h5 class="text-center text-info">In progress</h5>
+					</div>
+
+					<ul body-column-job>
+						<ng-container *ngFor="let todo of this.dataTodoList">
+
+							<ng-container *ngIf="todo.status == 'InProgress'">
+								<li>
+									<label class="d-flex justify-content-between align-items-center show-on">
+										<span class="text-dark overflow-hidden task-todo">
+											{{todo.name}}
+										</span>
+										<span class="show-on-mouse">
+											<button [hidden]='true'>
+											</button>
+											<button class="btn btn-outline-secondary" (click)="this.ChangeStatusTo(todo.id,'ToDo')">
+												<i class="fa-solid fa-arrow-left"></i>
+											</button>
+											&nbsp;
+											<button class="btn btn-outline-danger" (click)="this.ChangeStatusTo(todo.id,'Warning')">
+												<i class="fa-solid fa-triangle-exclamation"></i>
+											</button>
+											&nbsp;
+											<button class="btn btn-outline-success" (click)="this.ChangeStatusTo(todo.id,'Done')">
+												<i class="fa-solid fa-check"></i>
+											</button>
+										</span>
+									</label>
+									<hr>
+								</li>
+							</ng-container>
+						</ng-container>
+					</ul>
+
+				</app-column-job>
+			</div>
+			<div class="col-3 border">
+				<br>
+				<app-column-job>
+					<div header-column-job>
+						<h5 class="text-center text-success">Complete</h5>
+
+					</div>
+					<ul body-column-job>
+						<ng-container *ngFor="let todo of this.dataTodoList">
+
+							<ng-container *ngIf="todo.status == 'Done'">
+								<li>
+									<label class="d-flex justify-content-between align-items-center show-on">
+										<span class="text-dark overflow-hidden task-todo">
+											{{todo.name}}
+										</span>
+										<span class="show-on-mouse">
+											<button [hidden]='true'>
+											</button>
+											<button class="btn btn-outline-info" (click)="this.ChangeStatusTo(todo.id,'InProgress')">
+												<i class="fa-solid fa-rotate-left"></i>
+											</button>
+											&nbsp;
+											<button class="btn btn-outline-danger" (click)="this.ChangeStatusTo(todo.id,'Warning')">
+												<i class="fa-solid fa-triangle-exclamation"></i>
+											</button>
+											
+										</span>
+									</label>
+									<hr>
+								</li>
+							</ng-container>
+						</ng-container>
+					</ul>
+
+
+				</app-column-job>
+			</div>
+			<div class="col-3 border">
+				<br>
+				<app-column-job>
+					<div header-column-job>
+						<h5 class="text-center text-danger">Warning</h5>
+					</div>
+					<ul body-column-job>
+						<ng-container *ngFor="let todo of this.dataTodoList">
+
+							<ng-container *ngIf="todo.status == 'Warning'">
+								<li>
+									<label class="d-flex justify-content-between align-items-center show-on">
+										<span class="text-dark overflow-hidden task-todo">
+											{{todo.name}}
+										</span>
+										<span class="show-on-mouse">
+											<button [hidden]='true'>
+											</button>
+											<button class="btn btn-outline-info" (click)="this.ChangeStatusTo(todo.id,'InProgress')">
+												<i class="fa-solid fa-rotate-left"></i>
+											</button>
+											&nbsp;
+											<button class="btn btn-outline-success" (click)="this.ChangeStatusTo(todo.id,'Done')">
+												<i class="fa-solid fa-check"></i>
+											</button>
+										</span>
+									</label>
+									<hr>
+								</li>
+							</ng-container>
+						</ng-container>
+					</ul>
+
+				</app-column-job>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<app-add-task-modal ></app-add-task-modal>

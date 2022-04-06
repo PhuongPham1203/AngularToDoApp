@@ -1,0 +1,29 @@
+<!--Start Modal Confirm-->
+<ng-template #taskModal let-modal>
+	<div class="modal-header">
+		<h4 id="modal-title" class="modal-title">New Task</h4>
+		<button type="button" class="btn-close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<form [formGroup]="this.newTaskForm">
+			<div class="mb-3">
+				<label>Name</label>
+				<input type="text" class="form-control" formControlName="name" required>
+			</div>
+			<div class="mb-3">
+				<label>Description</label>
+				<textarea class="form-control" style="height: 200px;" formControlName="description"></textarea>
+			</div>
+			<div class="mb-3">
+				<label>Note</label>
+				<textarea class="form-control" style="height: 100px;" formControlName="note"></textarea>
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button type="button"  class="btn btn-outline-secondary"
+			(click)="modal.dismiss('No click')">Cancel</button>
+		<button [disabled]="this.newTaskForm.invalid" type="button" class="btn btn-success" (click)="modal.close('Yes click')">Save</button>
+	</div>
+</ng-template>
+<!--End Modal Confirm-->

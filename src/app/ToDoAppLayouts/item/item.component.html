@@ -1,0 +1,18 @@
+<div class="card mb-4" style="height: 18rem;">
+	<div class="card-body" >
+		<div class="row">
+			<!--25 character-->
+			<h5 class="card-title fw-bold col-10" [routerLink]="['/tododetail/'+job.id]">
+				{{job.name}}
+			</h5>
+			<span class="text-end col-1">
+				<button class="btn btn-outline-danger " (click)="this.DeleteWorkSpace()"><i class="fa-regular fa-x"></i></button>
+			</span>
+		</div>
+		<hr>
+		<!--200 character-->
+		<span style="white-space: pre-wrap;" class="overflow-hidden">
+			{{job.description}}
+		</span>
+	</div>
+</div>
