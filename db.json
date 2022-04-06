@@ -6,24 +6,19 @@
       "id": 1
     },
     {
-      "name": "job",
-      "description": "asd",
+      "name": "Công việc cần làm ngày 2",
+      "description": "Bắt đầu mỗi ngày, bạn hãy dành ra khoảng 15 phút để tạo một danh sách việc cần làm mới, hoặc nếu đã có rồi thì hãy chỉnh sửa chúng. Vì không phải",
+      "id": 2
+    },
+    {
+      "name": "Tìm ra giới hạn của bản thân",
+      "description": "Đừng quá tham lam mà giao cho mình quá nhiều nhiệm vụ, việc tạo danh sách việc cần làm để giúp bạn có được thời gian hợp lý để làm việc hiệu quả hơn. Nếu bạn dồn ép quá nhiều cho mình, bạn sẽ nhận thấy cơ thể bị quá tải và rất nhiều nhiệm vụ không thể hoàn thành được. Cơ thể luôn cần thời gian để nghỉ ngơi.",
       "id": 3
     },
     {
-      "name": "asdn",
-      "description": "laksnd",
-      "id": 10
-    },
-    {
-      "name": "asdkjn",
-      "description": "aslkdnl",
-      "id": 11
-    },
-    {
-      "name": "asldn",
-      "description": "asdn",
-      "id": 14
+      "name": "tên kế hoạch",
+      "description": "chi tiết kế hoạch",
+      "id": 4
     }
   ],
   "todolist": [
@@ -56,7 +51,7 @@
       "kanban_id": 2,
       "name": "job 8",
       "description": "",
-      "status": "ToDo",
+      "status": "Done",
       "note": ""
     },
     {
@@ -106,6 +101,102 @@
       "kanban_id": 1,
       "status": "ToDo",
       "id": 18
+    },
+    {
+      "name": " ưu tiên. Nếu việc nào khó quá có thể",
+      "description": "",
+      "note": "",
+      "kanban_id": 2,
+      "status": "Warning",
+      "id": 20
+    },
+    {
+      "name": "rằng mình sẽ hoàn thành nó.",
+      "description": "",
+      "note": "",
+      "kanban_id": 2,
+      "status": "Done",
+      "id": 21
+    },
+    {
+      "name": "m lam mà giao cho mình quá n",
+      "description": "",
+      "note": "",
+      "kanban_id": 2,
+      "status": "InProgress",
+      "id": 22
+    },
+    {
+      "name": "những thành tựu lớn hoặc kết",
+      "description": "",
+      "note": "",
+      "kanban_id": 3,
+      "status": "ToDo",
+      "id": 23
+    },
+    {
+      "name": " \"trở nên thông thạo Tiếng",
+      "description": "",
+      "note": "",
+      "kanban_id": 3,
+      "status": "InProgress",
+      "id": 24
+    },
+    {
+      "name": " hoặc kết quả sau những sự cố gắng lâu dài.",
+      "description": "",
+      "note": "",
+      "kanban_id": 3,
+      "status": "ToDo",
+      "id": 25
+    },
+    {
+      "name": "dấu trên con đường đạt được mong",
+      "description": "",
+      "note": "",
+      "kanban_id": 3,
+      "status": "Warning",
+      "id": 26
+    },
+    {
+      "name": "ưu tiên. Nếu việc nào k",
+      "description": "",
+      "note": "",
+      "kanban_id": 2,
+      "status": "ToDo",
+      "id": 27
+    },
+    {
+      "name": " cần làm hiệu quả sẽ hướng dẫn bạn suốt cả ",
+      "description": "",
+      "note": "",
+      "kanban_id": 2,
+      "status": "ToDo",
+      "id": 28
+    },
+    {
+      "name": "mình không thể nào hoàn thành hết",
+      "description": "",
+      "note": "",
+      "kanban_id": 2,
+      "status": "ToDo",
+      "id": 29
+    },
+    {
+      "name": "ng nhau xem qua những m",
+      "description": "",
+      "note": "",
+      "kanban_id": 3,
+      "status": "Done",
+      "id": 30
+    },
+    {
+      "name": " ngày mới và khi vừa mới hoàn th",
+      "description": "",
+      "note": "",
+      "kanban_id": 3,
+      "status": "InProgress",
+      "id": 31
     }
   ]
 }
