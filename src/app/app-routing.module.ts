@@ -10,9 +10,10 @@ const routes: Routes = [
 	{path:"todoapp",component:ToDoAppComponent},
 	{path:"tododetail/:id",component:ToDoDetailComponent},
 	{path:"sendmessager",component:ParentComponent},
-
 	{path:"content",component:ContentProjectionComponent},
 
+
+	
 	{path:"**",redirectTo:"",pathMatch:"full"}
 ];
 

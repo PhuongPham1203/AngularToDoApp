@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -7,10 +7,10 @@ export class DomainService {
 
   constructor() { }
 
-  private urlDatabase = "http://localhost:3000";
+  private urlAPI = environment.urlAPI;
 
 	public getUrlDatabase() {
-		return this.urlDatabase;
+		return this.urlAPI; 
 	}
 
 }

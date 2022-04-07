@@ -50,7 +50,7 @@
       "id": 8,
       "kanban_id": 2,
       "name": "job 8",
-      "description": "",
+      "description": "chi tiet job 8",
       "status": "Done",
       "note": ""
     },
@@ -58,7 +58,7 @@
       "id": 9,
       "kanban_id": 2,
       "name": "job 9",
-      "description": "",
+      "description": "askjdnkj",
       "status": "ToDo",
       "note": ""
     },
@@ -176,10 +176,10 @@
     },
     {
       "name": "mình không thể nào hoàn thành hết",
-      "description": "",
+      "description": "day la chi tiet",
       "note": "",
       "kanban_id": 2,
-      "status": "ToDo",
+      "status": "InProgress",
       "id": 29
     },
     {
@@ -195,8 +195,24 @@
       "description": "",
       "note": "",
       "kanban_id": 3,
-      "status": "InProgress",
+      "status": "Warning",
       "id": 31
+    },
+    {
+      "name": "job 10",
+      "description": "aaa asldknm",
+      "note": "bbb asdlkn",
+      "kanban_id": 2,
+      "status": "ToDo",
+      "id": 32
+    },
+    {
+      "name": "task 1",
+      "description": "",
+      "note": "",
+      "kanban_id": 3,
+      "status": "ToDo",
+      "id": 33
     }
   ]
 }

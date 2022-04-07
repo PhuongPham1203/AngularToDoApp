@@ -104,7 +104,10 @@ export class ToDoDetailComponent implements OnInit {
 		this.childComponentOpenAddModal.OpenModalAddTask(dataTask);
 	}
 
-
+	public GetDetailTask(task:any){
+	
+		this.childComponentOpenAddModal.OpenModalDetailTask(task);
+	}
 
 }
 

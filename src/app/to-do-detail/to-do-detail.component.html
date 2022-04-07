@@ -16,7 +16,7 @@
 							<ng-container *ngIf="todo.status == 'ToDo'">
 								<li>
 									<label class="d-flex justify-content-between align-items-center show-on">
-										<span class="text-dark overflow-hidden task-todo">
+										<span class="text-dark overflow-hidden task-todo" (click)="this.GetDetailTask(todo)">
 											{{todo.name}}
 										</span>
 										<span class="show-on-mouse">
@@ -55,10 +55,10 @@
 							<ng-container *ngIf="todo.status == 'InProgress'">
 								<li>
 									<label class="d-flex justify-content-between align-items-center show-on">
-										<span class="text-dark overflow-hidden task-todo">
+										<span class="text-dark overflow-hidden task-todo" (click)="this.GetDetailTask(todo)">
 											{{todo.name}}
 										</span>
-										<span class="show-on-mouse">
+										<span class="show-on-mouse ">
 											<button [hidden]='true'>
 											</button>
 											<button class="btn btn-outline-secondary" (click)="this.ChangeStatusTo(todo.id,'ToDo')">
@@ -95,7 +95,7 @@
 							<ng-container *ngIf="todo.status == 'Done'">
 								<li>
 									<label class="d-flex justify-content-between align-items-center show-on">
-										<span class="text-dark overflow-hidden task-todo">
+										<span class="text-dark overflow-hidden task-todo" (click)="this.GetDetailTask(todo)">
 											{{todo.name}}
 										</span>
 										<span class="show-on-mouse">
@@ -132,7 +132,7 @@
 							<ng-container *ngIf="todo.status == 'Warning'">
 								<li>
 									<label class="d-flex justify-content-between align-items-center show-on">
-										<span class="text-dark overflow-hidden task-todo">
+										<span class="text-dark overflow-hidden task-todo" (click)="this.GetDetailTask(todo)">
 											{{todo.name}}
 										</span>
 										<span class="show-on-mouse">

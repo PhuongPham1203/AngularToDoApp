@@ -25,6 +25,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddJobModalComponent } from './ToDoAppLayouts/add-job-modal/add-job-modal.component';
 import { AddTaskModalComponent } from './ToDoAppLayouts/add-task-modal/add-task-modal.component';
 
+import {StoreModule} from '@ngrx/store';
+
+
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -42,8 +45,8 @@ import { AddTaskModalComponent } from './ToDoAppLayouts/add-task-modal/add-task-
 		ContentInComponentComponent,
 		ColumnJobComponent,
 		ButtonsInTaskComponent,
-  AddJobModalComponent,
-  AddTaskModalComponent,
+		AddJobModalComponent,
+		AddTaskModalComponent
 	],
 	imports: [
 		BrowserModule,

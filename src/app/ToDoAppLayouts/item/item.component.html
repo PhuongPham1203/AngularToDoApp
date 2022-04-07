@@ -1,12 +1,29 @@
 <div class="card mb-4" style="height: 18rem;">
-	<div class="card-body" >
-		<div class="row">
+	<div class="card-body">
+		<div class="row d-flex align-items-center">
 			<!--25 character-->
-			<h5 class="card-title fw-bold col-10" [routerLink]="['/tododetail/'+job.id]">
+			<h5 class="card-title fw-bold  col-6 " [routerLink]="['/tododetail/'+job.id]">
 				{{job.name}}
 			</h5>
-			<span class="text-end col-1">
-				<button class="btn btn-outline-danger " (click)="this.DeleteWorkSpace()"><i class="fa-regular fa-x"></i></button>
+			<span class="col-4 text-end">
+				<ng-container *ngIf="this.tasks.inprogress>0">
+					<ng-container *ngIf="this.tasks.todo==this.tasks.inprogress; then doneTasks ;else notDontTasks"></ng-container>
+					<ng-template #doneTasks>
+						<span class="text-success">{{this.tasks.todo}}/{{this.tasks.inprogress}} <i class="fa-solid fa-check"></i></span>
+					</ng-template>
+					<ng-template #notDontTasks>
+						<span class="text-info">{{this.tasks.todo}}/{{this.tasks.inprogress}} <i class="fa-solid fa-check"></i></span>
+					</ng-template>
+				</ng-container>
+				&nbsp;
+				<ng-container *ngIf="this.tasks.warning>0">
+					<span class="text-danger">{{this.tasks.warning}} <i class="fa-solid fa-triangle-exclamation"></i></span>
+				</ng-container>
+
+			</span>
+			<span class="text-end col-2">
+				<button class="btn btn-outline-danger " (click)="this.DeleteWorkSpace()"><i
+						class="fa-regular fa-x"></i></button>
 			</span>
 		</div>
 		<hr>

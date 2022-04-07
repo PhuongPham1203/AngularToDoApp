@@ -21,7 +21,7 @@ export class AddTaskModalComponent implements OnInit {
 		description: new FormControl(),
 		note: new FormControl(),
 		kanban_id: new FormControl(),
-		status:new FormControl("ToDo")
+		status: new FormControl("ToDo")
 	});
 
 	constructor(
@@ -43,11 +43,11 @@ export class AddTaskModalComponent implements OnInit {
 		var url = this.domain.getUrlDatabase() + '/todolist';
 
 		var input = JSON.stringify(this.newTaskForm.value);
-		
+
 		this.httpApi.postAPIWithData(url, input).subscribe((data) => {
 
 			var listTask = this.dataService.GetDetailTodoList();
-			
+
 			listTask.push(data);
 		});
 	}
@@ -59,12 +59,60 @@ export class AddTaskModalComponent implements OnInit {
 			name: data.name,
 			description: data.description,
 			note: data.note,
-			status:"ToDo"
+			status: "ToDo"
 		})
 
 		this.ngbModal.open(this.taskModal).result.then((result) => {
 
 			this.AddNewTask();
+			//console.log(result);
+		}, (reason) => {
+			//console.log(this.GetDismissReason(reason));
+		});
+	}
+
+	private EditTask(id: number) {
+
+		var newForm = new FormGroup({
+			name: new FormControl(this.newTaskForm.value.name),
+			description: new FormControl(this.newTaskForm.value.description),
+			note: new FormControl(this.newTaskForm.value.note),
+
+		});
+
+		var url = this.domain.getUrlDatabase() + '/todolist/' + id;
+
+		var input = JSON.stringify(newForm.value);
+
+		this.httpApi.patchAPIWithData(url, input).subscribe((data) => {
+
+			var listTask = this.dataService.GetDetailTodoList();
+
+			
+			listTask.forEach((item: any, index: number) => {
+
+				if (item.id === id) {
+					listTask[index].name= this.newTaskForm.value.name;
+					listTask[index].description= this.newTaskForm.value.description;
+					listTask[index].note= this.newTaskForm.value.note;
+				}
+			});
+
+		});
+	}
+
+	public OpenModalDetailTask(data: any) {
+		this.newTaskForm.setValue({
+			kanban_id: data.kanban_id,
+			name: data.name,
+			description: data.description,
+			note: data.note,
+			status: ""
+		});
+
+		this.ngbModal.open(this.taskModal).result.then((result) => {
+
+			this.EditTask(data.id);
 			//console.log(result);
 		}, (reason) => {
 			//console.log(this.GetDismissReason(reason));

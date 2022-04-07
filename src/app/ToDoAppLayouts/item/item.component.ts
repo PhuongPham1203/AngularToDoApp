@@ -12,6 +12,12 @@ export class ItemComponent implements OnInit {
 
 	@Input() job: any;
 
+	public tasks={
+		todo:2,
+		inprogress:10,
+		warning:0
+	}
+
 	constructor(
 
 		private domain: DomainService,
@@ -20,6 +26,10 @@ export class ItemComponent implements OnInit {
 	) { }
 
 	ngOnInit(): void {
+	}
+
+	ngAfterViewInit(){
+		console.log(this.job);
 	}
 
 	public DeleteWorkSpace() {
