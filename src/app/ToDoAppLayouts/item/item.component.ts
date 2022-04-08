@@ -29,7 +29,7 @@ export class ItemComponent implements OnInit {
 	}
 
 	ngAfterViewInit(){
-		console.log(this.job);
+		//console.log(this.job);
 	}
 
 	public DeleteWorkSpace() {

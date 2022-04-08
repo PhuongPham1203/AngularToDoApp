@@ -30,7 +30,7 @@ export class GalleryComponent implements OnInit {
 	} 
 
 	onAlbumChange(value:number){
-		console.log(value);
+		//console.log(value);
 		this.allAlbums$ = this.store.pipe(select(galleryByAlbumId(value)));
 	}
 

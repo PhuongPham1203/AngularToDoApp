@@ -25,11 +25,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddJobModalComponent } from './ToDoAppLayouts/add-job-modal/add-job-modal.component';
 import { AddTaskModalComponent } from './ToDoAppLayouts/add-task-modal/add-task-modal.component';
 
-import {StoreModule} from '@ngrx/store';
+
 import { galleryReducer } from './NgrxStoreData/store/gallery.reducer';
 import { GalleryService } from './NgrxStoreData/gallery/gallery.service';
 import { GalleryComponent } from './NgrxStoreData/gallery/gallery.component';
 
+import { LoginComponent } from './login/login.component';
+
+import { appReducer } from './NgrxStoreData';
+import { EffectsModule } from '@ngrx/effects';
+//import {AppEffects} from './effects';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
 	declarations: [
@@ -50,7 +56,8 @@ import { GalleryComponent } from './NgrxStoreData/gallery/gallery.component';
 		ButtonsInTaskComponent,
 		AddJobModalComponent,
 		AddTaskModalComponent,
-		GalleryComponent
+		GalleryComponent,
+  LoginComponent
 	],
 	imports: [
 		BrowserModule,
@@ -60,9 +67,8 @@ import { GalleryComponent } from './NgrxStoreData/gallery/gallery.component';
 		ReactiveFormsModule,
 		HttpClientModule,
 
-		StoreModule.forRoot({
-			gallery:galleryReducer
-		})
+		StoreModule.forRoot(appReducer),
+		//EffectsModule.forRoot(AppEffects)
 	],
 	providers: [
 		GalleryService
