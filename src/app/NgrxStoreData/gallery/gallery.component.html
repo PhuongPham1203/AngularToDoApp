@@ -1,0 +1,32 @@
+<div class="container" >
+	<!--
+	<div class="row-justify-content-center">
+		<select class="form-select form-select-md mt-3 w-50">
+			<option value="-1">Select Gallery</option>
+			<option *ngFor="let i of this.albumIds$ | async" [value]="i">
+				{{i}}
+			</option>
+		</select>
+	</div>
+	-->
+
+	<div class="row-justify-content-center">
+		<select class="form-select form-select-md mt-3 w-50" [ngModel]="this.albumSelectedId" (ngModelChange)="this.onAlbumChange($event)">
+			<option value="-1">Select Gallery</option>
+			<option *ngFor="let i of this.albumIds$ | async" [value]="i">
+				{{i}}
+			</option>
+		</select>
+	</div>
+
+	<div class="row">
+		<div *ngFor="let item of this.allAlbums$|async" class=" card m-3" style="width: 18rem;">
+			<img src="" class="card-img-top" alt="..." style="height: 150px;">
+			<div class="card-body">
+				<h5 class="card-title">{{item.title}}</h5>
+				<div>AlbumId : {{item.albumId}}</div>
+			</div>
+		</div>
+	</div>
+
+</div>

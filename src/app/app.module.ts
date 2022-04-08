@@ -26,6 +26,9 @@ import { AddJobModalComponent } from './ToDoAppLayouts/add-job-modal/add-job-mod
 import { AddTaskModalComponent } from './ToDoAppLayouts/add-task-modal/add-task-modal.component';
 
 import {StoreModule} from '@ngrx/store';
+import { galleryReducer } from './NgrxStoreData/store/gallery.reducer';
+import { GalleryService } from './NgrxStoreData/gallery/gallery.service';
+import { GalleryComponent } from './NgrxStoreData/gallery/gallery.component';
 
 
 @NgModule({
@@ -46,7 +49,8 @@ import {StoreModule} from '@ngrx/store';
 		ColumnJobComponent,
 		ButtonsInTaskComponent,
 		AddJobModalComponent,
-		AddTaskModalComponent
+		AddTaskModalComponent,
+		GalleryComponent
 	],
 	imports: [
 		BrowserModule,
@@ -54,9 +58,15 @@ import {StoreModule} from '@ngrx/store';
 		FormsModule,
 		NgbModule,
 		ReactiveFormsModule,
-		HttpClientModule
+		HttpClientModule,
+
+		StoreModule.forRoot({
+			gallery:galleryReducer
+		})
 	],
-	providers: [],
+	providers: [
+		GalleryService
+	],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

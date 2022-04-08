@@ -30,3 +30,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 json-server --watch db.json
 json-server -w db.json
 
+npm install @ngrx/store --save
+npm install bootstrap --save
+npm install jquery --save
+npm install popper --save
+ng add @ng-bootstrap/ng-bootstrap
